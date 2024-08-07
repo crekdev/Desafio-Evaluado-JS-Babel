@@ -16,9 +16,13 @@ class Cliente {
   }
 
   calcularImpuesto() {
+    //Solución con destructuring
     // destructuring documentation: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
-    const { montoBrutoAnual, deducciones } = this.#impuesto;
-    let resultadoFormula = (montoBrutoAnual - deducciones) * 0.21;
+    //const { montoBrutoAnual, deducciones } = this.#impuesto;
+    // let resultadoFormula = (montoBrutoAnual - deducciones) * 0.21;
+    
+    //Solución con propiedades del objeto
+    let resultadoFormula = (this.#impuesto.montoBrutoAnual - this.#impuesto.deducciones) * 0.21;
     return resultadoFormula;
   }
 }
